@@ -18,8 +18,8 @@ class TestNavigateHeaderMenu:
             .hover_to_about_company() \
             .click_header_about_company_button()
 
-    @allure.story('Переход на страницу "О компании"')
-    @allure.title('Проверка перехода на страницу "О компании" через хедер меню')
+    @allure.story('Переход на страницу "Наука"')
+    @allure.title('Проверка перехода на страницу "Наука" через хедер меню')
     @allure.severity(allure.severity_level.NORMAL)
     @allure.tag('UI', 'WEB')
     @allure.label('owner', 'QAQ Falin Pavel')
