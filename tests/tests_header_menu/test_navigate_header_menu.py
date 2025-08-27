@@ -28,3 +28,25 @@ class TestNavigateHeaderMenu:
         biocad.header_menu \
             .hover_to_about_company() \
             .click_header_science_button()
+
+    @allure.story('Переход на страницу "Научные публикации"')
+    @allure.title('Проверка перехода на страницу "Научные публикации" через хедер меню')
+    @allure.severity(allure.severity_level.NORMAL)
+    @allure.tag('UI', 'WEB')
+    @allure.label('owner', 'QAQ Falin Pavel')
+    def test_transition_to_science_publications_page_from_header_menu(self):
+        biocad.home_page.open()
+        biocad.header_menu \
+            .hover_to_about_company() \
+            .click_header_science_publications_button()
+
+    @allure.story('Переход на страницу "Партнерство"')
+    @allure.title('Проверка перехода на страницу "Партнерство" через хедер меню')
+    @allure.severity(allure.severity_level.NORMAL)
+    @allure.tag('UI', 'WEB')
+    @allure.label('owner', 'QAQ Falin Pavel')
+    def test_transition_to_partnership_page_from_header_menu(self):
+        biocad.home_page.open()
+        biocad.header_menu \
+            .hover_to_about_company() \
+            .click_header_partnership_button()

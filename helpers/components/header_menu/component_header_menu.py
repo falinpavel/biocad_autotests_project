@@ -49,6 +49,36 @@ class ComponentHeaderMenu:
             be.present, be.visible))
         return self
 
+    @allure.step('Навести курсор на кнопку "Научные публикации" из списка подменю')
+    def click_header_science_publications_button(self) -> 'ComponentHeaderMenu':
+        """
+        Метод наведения курсора на кнопку "Наука" в подменю (после наведения на кнопку "О компании").
+        После наводим курсор на кнопку "Научные публикации" в другом подменю и нажимаем.
+        После проверяем что страница открылась, а именно, проверяем что появился элемент с текстом.
+        """
+        browser.element('//li[@class="sub"]/button[contains(text(),"Наука")]').should(Condition.by_and(
+            be.visible, have.text('Наука'))).hover()
+        browser.element('//a[@href="/publications"]').should(Condition.by_and(
+            be.clickable, have.text('Научные публикации'))).hover().click()
+        browser.element('//p[contains(text(),"В этом разделе представлены научные публикации")]').should(
+            Condition.by_and(be.present, be.visible))
+        return self
+
+    @allure.step('Навести курсор на кнопку "Партнерство" из списка подменю')
+    def click_header_partnership_button(self) -> 'ComponentHeaderMenu':
+        """
+        Метод наведения курсора на кнопку "Наука" в подменю (после наведения на кнопку "О компании").
+        После наводим курсор на кнопку "Партнерство" в другом подменю и нажимаем.
+        После проверяем что страница открылась, а именно, проверяем что появился элемент с текстом.
+        """
+        browser.element('//li[@class="sub"]/button[contains(text(),"Наука")]').should(Condition.by_and(
+            be.visible, have.text('Наука'))).hover()
+        browser.element('//a[@href="/partnership"]').should(Condition.by_and(
+            be.clickable, have.text('Партнерство'))).hover().click()
+        browser.element('//h1[@class="badge"]').should(
+            Condition.by_and(be.present, be.visible, have.text('Научное сотрудничество с BIOCAD')))
+        return self
+
     @allure.step("Наведение курсора на кнопку 'Продукты'")
     def hover_to_products(self) -> 'ComponentHeaderMenu':
         """
