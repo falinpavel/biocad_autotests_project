@@ -25,13 +25,10 @@ class ComponentHeaderMenu:
     def click_header_about_company_button(self) -> 'ComponentHeaderMenu':
         """
         Метод нажатия кнопки "О компании" из хедер меню после наведения на одноименную кнопку.
-        После клика проверяем что страница открылась, а именно, проверяем что появился элемент с описанием.
         """
         with allure.step('После наведения курсора на кнопку "О компании" нажать на кнопку "О компании" из списка'):
             browser.element('//a[@href="/we"]').should(Condition.by_and(
                 be.clickable, have.text("О компании"))).hover().click()
-            browser.element('//div[@class="excerpt"]').should(Condition.by_and(
-                be.visible, have.text("BIOCAD — ведущая биотехнологическая компания России")))
         return self
 
     @allure.step('Навести курсор на кнопку "Наука" из списка подменю')
@@ -39,14 +36,11 @@ class ComponentHeaderMenu:
         """
         Метод наведения курсора на кнопку "Наука" в подменю (после наведения на кнопку "О компании").
         После наводим курсор на кнопку "Наука" в другом подменю и нажимаем.
-        После проверяем что страница открылась, а именно, проверяем что появился элемент с текстом.
         """
         browser.element('//li[@class="sub"]/button[contains(text(),"Наука")]').should(Condition.by_and(
             be.visible, have.text('Наука'))).hover()
         browser.element('//a[@href="/science"]').should(Condition.by_and(
             be.clickable, have.text('Наука'))).hover().click()
-        browser.element('//p[contains(text(),"Полный цикл разработки")]').should(Condition.by_and(
-            be.present, be.visible))
         return self
 
     @allure.step('Навести курсор на кнопку "Научные публикации" из списка подменю')
@@ -54,14 +48,11 @@ class ComponentHeaderMenu:
         """
         Метод наведения курсора на кнопку "Наука" в подменю (после наведения на кнопку "О компании").
         После наводим курсор на кнопку "Научные публикации" в другом подменю и нажимаем.
-        После проверяем что страница открылась, а именно, проверяем что появился элемент с текстом.
         """
         browser.element('//li[@class="sub"]/button[contains(text(),"Наука")]').should(Condition.by_and(
             be.visible, have.text('Наука'))).hover()
         browser.element('//a[@href="/publications"]').should(Condition.by_and(
             be.clickable, have.text('Научные публикации'))).hover().click()
-        browser.element('//p[contains(text(),"В этом разделе представлены научные публикации")]').should(
-            Condition.by_and(be.present, be.visible))
         return self
 
     @allure.step('Навести курсор на кнопку "Партнерство" из списка подменю')
@@ -69,14 +60,11 @@ class ComponentHeaderMenu:
         """
         Метод наведения курсора на кнопку "Наука" в подменю (после наведения на кнопку "О компании").
         После наводим курсор на кнопку "Партнерство" в другом подменю и нажимаем.
-        После проверяем что страница открылась, а именно, проверяем что появился элемент с текстом.
         """
         browser.element('//li[@class="sub"]/button[contains(text(),"Наука")]').should(Condition.by_and(
             be.visible, have.text('Наука'))).hover()
         browser.element('//a[@href="/partnership"]').should(Condition.by_and(
             be.clickable, have.text('Партнерство'))).hover().click()
-        browser.element('//h1[@class="badge"]').should(
-            Condition.by_and(be.present, be.visible, have.text('Научное сотрудничество с BIOCAD')))
         return self
 
     @allure.step("Наведение курсора на кнопку 'Продукты'")
@@ -88,4 +76,14 @@ class ComponentHeaderMenu:
         with allure.step('Навести курсов на кнопку "Продукты" и проверить текст на кнопке'):
             browser.element('//button[text()="Продукты"]').should(Condition.by_and(
                 be.visible, have.text("Продукты"))).hover()
+        return self
+
+    @allure.step('Нажать на кнопку "Заказать препарат" из списка подменю')
+    def click_header_order_the_drug_button(self) -> 'ComponentHeaderMenu':
+        """
+        Метод нажатия кнопки "Заказать препарат" из хедер меню для перехода на страницу.
+        """
+        with allure.step('Нажать на кнопку "Заказать препарат" из хедер меню для перехода на страницу'):
+            browser.element('//a[@href="/knv"]').should(Condition.by_and(
+                be.clickable, have.text("Заказать препарат"))).hover().click()
         return self

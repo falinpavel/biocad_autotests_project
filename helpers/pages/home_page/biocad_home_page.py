@@ -14,5 +14,8 @@ class BiocadHomePage:
         self.url = Links.BASE_URL
 
     def open(self) -> 'BiocadHomePage':
+        """
+        Метод открытия главной страницы сайта biocad.ru.
+        """
         browser.open(self.url)
         return self
