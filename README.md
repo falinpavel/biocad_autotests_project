@@ -26,7 +26,7 @@
 ## <img width="5%" title="jenkins" src="resources/images/logo/jenkins.png"> Запуск тестов в Jenkins
 
 1) Авторизоваться в Jenkins
-2) Перейти в джобу falin_pavel_dodo_pizza_tests
+2) Перейти в джобу biocad_autotests_project
 3) Для запуска тестов в Jenkins нажать "Build with parameters"
 4) Нажать "Build"
 
